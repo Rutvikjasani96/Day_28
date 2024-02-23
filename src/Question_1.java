@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Question_1 {
-//    given n array elements & Q queries for each query find sum of elements in a given range
+//    given n array elements & q queries, for each query check if given subarray is increasing order or not?
     public static void main(String[] args) {
         int[] array = {1, 3, 4, 6, 2, 8, 6, 5, 10, 12, 14, 16, 9};
         int start=7;
@@ -15,9 +15,6 @@ public class Question_1 {
             if(array[i]<array[i+1]){
                 b[i] = 1;
             }
-        }
-        for(int i=0;i< array.length;i++){
-            System.out.print(" "+b[i]);
         }
         for(int i=1;i<b.length;i++){
             b[i] = b[i-1] + b[i];
