@@ -20,9 +20,9 @@ public class Question_2 {
         matrix[3][3] = 16;
         int a1 = 1,b1 = 1;
         int a2 = 2,b2 = 3;
-        solution(matrix,a1,a2,b1,b2);
+        System.out.println("sum of sub matrix : "+solution(matrix,a1,a2,b1,b2));
     }
-    static void solution(int[][] matrix,int a1,int a2,int b1,int b2){
+    static int solution(int[][] matrix,int a1,int a2,int b1,int b2){
         int[][] ps = PrefixMatrix.prefixMatrix(matrix);
         int ans = ps[a2][b2];
         if(a1>0 && b1>0) {
@@ -32,6 +32,6 @@ public class Question_2 {
         }else if(b1>0){
             ans = ans - ps[a2][b1-1];
         }
-        System.out.println(ans);
+        return ans;
     }
 }

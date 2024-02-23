@@ -33,12 +33,12 @@ public class PrefixMatrix {
                 }
             }
         }
-        for(int i=0;i< preMat.length;i++){  // print prefix sum
-            for(int j=0;j<preMat[0].length;j++){
-                System.out.print(" "+preMat[i][j]);
-            }
-            System.out.println();
-        }
+//        for(int i=0;i< preMat.length;i++){  // print prefix sum
+//            for(int j=0;j<preMat[0].length;j++){
+//                System.out.print(" "+preMat[i][j]);
+//            }
+//            System.out.println();
+//        }
         return preMat;
     }
 }
