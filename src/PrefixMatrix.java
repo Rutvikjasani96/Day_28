@@ -12,6 +12,7 @@ public class PrefixMatrix {
         matrix[2][1] = 8;
         matrix[2][2] = 9;
         prefixMatrix(matrix);
+        prefixMatrixSecond(matrix);
     }
     static int[][] prefixMatrix(int[][] matrix){
         int[][] preMat = new int[matrix.length][matrix[0].length];
@@ -33,12 +34,34 @@ public class PrefixMatrix {
                 }
             }
         }
-//        for(int i=0;i< preMat.length;i++){  // print prefix sum
-//            for(int j=0;j<preMat[0].length;j++){
-//                System.out.print(" "+preMat[i][j]);
-//            }
-//            System.out.println();
-//        }
+        for(int i=0;i< preMat.length;i++){  // print prefix sum
+            for(int j=0;j<preMat[0].length;j++){
+                System.out.print(" "+preMat[i][j]);
+            }
+            System.out.println();
+        }
+        return preMat;
+    }
+    static int[][] prefixMatrixSecond(int[][] matrix){
+        int[][] preMat = new int[matrix.length][matrix[0].length];
+        for(int i=0;i< matrix.length;i++){
+            for(int j=0;j< matrix[0].length;j++){
+                preMat[i][j] = matrix[i][j];
+                if(i>0 && j>0) {
+                    preMat[i][j] +=  preMat[i - 1][j] + preMat[i][j - 1] - preMat[i - 1][j - 1];
+                }else if(i>0){
+                    preMat[i][j] += preMat[i - 1][j];
+                }else if(j>0){
+                    preMat[i][j] += preMat[i][j - 1];
+                }
+            }
+        }
+        for(int i=0;i< preMat.length;i++){  // print prefix sum
+            for(int j=0;j<preMat[0].length;j++){
+                System.out.print(" "+preMat[i][j]);
+            }
+            System.out.println();
+        }
         return preMat;
     }
 }
